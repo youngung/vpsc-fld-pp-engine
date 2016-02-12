@@ -1,4 +1,4 @@
-# VPSCC-FLD-PP-ENGINE
+# VPSC-FLD-PP-ENGINE
 Essential python scripts incorporated in VPSC-FLD to enable multi-threaded
 highly efficient computations to *predict* forming limit diagram (FLD) on the basis of
 ViscoPlastic Self-Consistent (VPSC) crystal plasticity code developed by R. Lebensohn and C. Tome.
@@ -10,6 +10,7 @@ computation for VPSC-FLD was realized on the basis of Python's multiprocessing p
 Also, please find the manual written in Latex for more details (man/manual.tex).
 
 
+
 Technical papers for reference:
 -------------------------------
 1. Forming limit prediction using a self-consistent crystal plasticity framework: a case study for body-centered cubic materials, Y Jeong, M-S Pham, M Iadicola, A Creuziger, T Foecke (under peer-review at Modelling and Simulation in Materials Science and Engineering)
@@ -18,6 +19,8 @@ Technical papers for reference:
 
 
 
+Do you want a copy of VPSC-FLD?
+-------------------------------
 This repository is not complete since VPSC-FLD requires VPSC source code.
 For those who would like to have an access or to have a copy of the full VPSC-FLD code,
 please contact me via youngung.jeong@gmail.com
