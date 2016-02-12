@@ -26,6 +26,7 @@ class workerFLDa():
         self.path_home=os.getcwd()
         ## Create the flow history class
         self.fc = FlowCurve()
+
     def create_working_folder(
             self,rho=0,cvm=1e-3,evm_limit=0.03,
             deij=1e-3,path_work=None):
@@ -52,6 +53,7 @@ class workerFLDa():
         print self.path_work, ' has been created'
         fld_pre_probe(False,rho, cvm, evm_limit, deij,
                       self.path_work)
+
     def run(self,bufsize=1):
         """
         Execute VPSC and piping stdout
@@ -78,6 +80,7 @@ class workerFLDa():
         self.pid=self.p.pid
         self.sigma = []
         self.epsilon = [] 
+
     def remove(self):
         """
         Caution when removing directories...
@@ -86,6 +89,7 @@ class workerFLDa():
         print 'path_work: %s has been removed'%self.path_work
         os.chdir(self.path_home)
         print 'Homing to %s'%self.path_home
+
     def readlines(self,nbuf=10,verbose=False):
         """
         Read <nbuf> number of lines from self.stdout
@@ -102,6 +106,7 @@ class workerFLDa():
                 eps  = np.array(map(float,d[0].split()))
                 sig  = np.array(map(float,d[1].split()))
                 udot = np.array(map(float,d[2].split()))
+                if len(d)>1: print d
             except: pass
             else:
                 if verbose: print d
@@ -124,28 +129,14 @@ class workerFLDa():
         t0=time.time()
         iexit=False
         while not(iexit):
+            time.sleep(dt)
+
             t1=time.time(); elps = t1-t0
             uet(elps,False,'Total elapsed time')
-            self.readlines(nbuf=nbuf)
-            try: 
-                dum=self.fc.nstp
-            except:
-                dum=0
-            else:
-                if self.fc.epsilon_vm[-1]>=term_evm:
-                    #self.p.kill()
-                    self.p.terminate()
-                    print '\nprocess killed due to exceeding term_evm'
-                    return self.fc.epsilon_vm[-1]
-                iexit = True
-            if self.p.poll()!=None:
-                print 'process terminated'
-                print self.p.poll();iexit=True
-                if self.fc.epsilon_vm[-1]<term_evm:
-                    print 'VM strain found from pid:%i '%self.p.pid,
-                    print 'is lower than the given value!'
-                    return self.fc.epsilon_vm[-1]
-            if not(iexit): time.sleep(dt)
+            self.readlines(nbuf=nbuf,verbose=True)
+
+            if self.p.poll()!=None: 
+                iexit=True
 
     def update_fc(self):
         """
