@@ -1,14 +1,23 @@
-# vpsc-fld-pp-engine
-parallel engine for VPSC-FLD
+# VPSCC-FLD-PP-ENGINE
+Essential python scripts incorporated in VPSC-FLD to enable multi-threaded
+highly efficient computations to *predict* forming limit diagram (FLD) on the basis of
+ViscoPlastic Self-Consistent (VPSC) crystal plasticity code developed by R. Lebensohn and C. Tome.
 
- # VPSC-FLD v1.0 does not allow communicatition between individual processes.
-   VPSC-FLD v2.0 should allow communications between them in order to speed-up.
+Note that VPSC-FLD is a separate repository but maintained in a private sector of USNISTGOV account in GitHub.
+The essential portion of of VPSC-FLD (that is not associated with the original VPSC code) is stored in this repository 
+for those who want to have a look at how Marciniak-Kuczynski was incorporated to VPSC and how the multi-threaded
+computation for VPSC-FLD was realized on the basis of Python's multiprocessing package.
+Also, please find the manual written in Latex for more details (man/manual.tex).
 
-VPSC-FLD v2.0 was released but stored in a private sector due to license issue.
-A portion of VPSC-FLD v.2 is stored to this repository for those who want to
-have a look at how Marciniak-Kuczynski was incorporated to VPSC and how multi-threaded
-run for VPSC-FLD was realized on the basis of Python's multiprocessing package.
+
+Technical papers for reference:
+-------------------------------
+1. Forming limit prediction using a self-consistent crystal plasticity framework: a case study for body-centered cubic materials, Y Jeong, M-S Pham, M Iadicola, A Creuziger, T Foecke (under peer-review at Modelling and Simulation in Materials Science and Engineering)
+2. Texture-based forming limit prediction for Mg sheet alloys ZE10 and AZ31, D Steglich, Y Jeong (under progress)
+3. Forming limit diagram predictions using a self-consistent crystal plasticity model: a parametric study, Y Jeong, M-S Pham, M Iadicola, A Creuziger, 2015, Key Engineering Materials 651, 193-198 (Proceedings of ESAFORM 2014)
+
+
 
 This repository is not complete since VPSC-FLD requires VPSC source code.
 For those who would like to have an access or to have a copy of the full VPSC-FLD code,
-please contact me via youngung.jeong@gmail
+please contact me via youngung.jeong@gmail.com
