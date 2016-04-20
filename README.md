@@ -13,8 +13,8 @@ Also, please find the manual written in Latex for more details (man/manual.tex).
 
 Technical papers for reference:
 -------------------------------
-1. Forming limit prediction using a self-consistent crystal plasticity framework: a case study for body-centered cubic materials, Y Jeong, M-S Pham, M Iadicola, A Creuziger, T Foecke (under peer-review at Modelling and Simulation in Materials Science and Engineering)
-2. Texture-based forming limit prediction for Mg sheet alloys ZE10 and AZ31, D Steglich, Y Jeong (under progress)
+1. Forming limit prediction using a self-consistent crystal plasticity framework: a case study for body-centered cubic materials, Y Jeong, M-S Pham, M Iadicola, A Creuziger, T Foecke, Modelling and Simulation in Materials Science and Engineering (accepted)
+2. Texture-based forming limit prediction for Mg sheet alloys ZE10 and AZ31, D Steglich, Y Jeong (Under peer-review in International Journal of Mechanical Sciences)
 3. Forming limit diagram predictions using a self-consistent crystal plasticity model: a parametric study, Y Jeong, M-S Pham, M Iadicola, A Creuziger, 2015, Key Engineering Materials 651, 193-198 (Proceedings of ESAFORM 2014)
 
 

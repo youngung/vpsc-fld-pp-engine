@@ -28,18 +28,18 @@ def main(aargs=[],optimization=3,exefn = 'vpsc',
             '-fno-align-commons','-finit-integer=zero',
             '-fbackslash','-fbounds-check','-finit-real=zero',
             '-fdefault-double-8','-fdefault-real-8'#]
-
             ## debug
             ,'-g'
-            ,'-Wall'
+            #,'-Wall'
             # ,'-ffpe-trap=zero,overflow,underflow'
             ,'-fbacktrace']
 
     args.append('-O%i '%optimization)
     for i in xrange(len(aargs)):
         args.append(aargs[i])
-    cmp_path = os.popen('which gfortran').\
-               readline().split('\n')[0]
+    # cmp_path = os.popen('which gfortran').\
+    #            readline().split('\n')[0]
+    cmp_path = 'gfortran'
     cmd = '%s '%cmp_path
     if verbose:
         nc = len(cmd)
@@ -102,6 +102,7 @@ if __name__=='__main__':
         results.append(rst1);results.append(rst2)
 
     pool.close();rst1.wait()
+    pool.terminate()
     uet(time.time()-t0,head='Compilation elapsed time')
     if opt!=0: dats="'%s' has been created"%tfn
     if opt!=0: print '\n'+'='*len(dats),'\nO0 completed'

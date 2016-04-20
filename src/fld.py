@@ -1,12 +1,20 @@
 """
-A python script that runs multi-threaded VPSC-based
+A Python script that runs multi-threaded VPSC-based
 Forming Limit Diagram predictions
--------------------------------------------------
+
+----------------------------------------------
 Youngung Jeong, PhD
+youngung.jeong@gmail.com
+----------------------------------------------
+2016March-Present, younguj@clemson.edu
+International Center for Automotive Research
+Clemson University
+----------------------------------------------
+2014March-2016Feb, youngung.jeong@nist.gov
 Center for Automotive Lightweighting
 National Institute of Standards and Technology
--------------------------------------------------
-youngung.jeong@nist.gov, youngung.jeong@gmail.com
+----------------------------------------------
+
 """
 import os, saveout, thread, run_tmp, time, shutil
 import numpy as np
@@ -27,9 +35,11 @@ def find_tmp():
     _tmp_
     """
     ## Find /data/
-    if os.path.isdir('/data/'):
+    if os.path.isdir('/local_scratch/'): ## Palmetto@Clemson
+        _tmp_ = '/local_scratch/'
+    elif os.path.isdir('/data/'): ## CTCMS cluster@NIST
         # _tmp_='/data/ynj/'
-        _tmp_='/data/ynj/scratch/' ## To prevent back-up in CTCMS
+        _tmp_='/data/ynj/scratch/'
     else:
         _tmp_='/tmp/ynj/'
     if not(os.path.isdir(_tmp_)):

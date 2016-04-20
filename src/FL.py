@@ -1,15 +1,21 @@
 """
-Forming Limit calculations based on VPSC-FLD (FL.py)
+A Python script that runs multi-threaded VPSC-based
+Forming Limit Diagram predictions
 
-Youngung Jeong
-
+----------------------------------------------
+Youngung Jeong, PhD
+youngung.jeong@gmail.com
+----------------------------------------------
+2016March-Present, younguj@clemson.edu
+International Center for Automotive Research
+Clemson University
+----------------------------------------------
+2014March-2016Feb, youngung.jeong@nist.gov
 Center for Automotive Lightweighting
 National Institute of Standards and Technology
+----------------------------------------------
 
-youngung.jeong@gmail.com
-youngung.jeong@nist.gov
 """
-
 
 ## check if NIST-VPSC-tool is properly set.
 import matplotlib as mpl
